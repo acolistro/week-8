@@ -1,7 +1,7 @@
 require('word')
 require('rspec')
 
-describe('.#word_definer') do
+describe('.#word') do
 
   before(:each) do
     @word = Word.new("Cat", nil)
