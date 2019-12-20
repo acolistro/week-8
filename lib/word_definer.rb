@@ -1,7 +1,7 @@
 class Word
   attr_reader :id, :definition
 
-  @@words = []
+  @@words = {}
   @@total_rows = 0
 
 
@@ -10,9 +10,9 @@ class Word
     @id = id || @@total_rows += 1
   end
 
-  before(:each) do
-    @word = Word.new( #create a new word )
-  end
+  # before(:each) do
+  #   @word = Word.new( )
+  # end
 
   def self.all()
     @@words.values()
@@ -21,4 +21,7 @@ class Word
   def self.find()
   end
 
+  def save
+    @@words[self.id] = Word.new(self.definition, self.id)
+  end
 end
