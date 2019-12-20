@@ -23,9 +23,15 @@ class Word
   end
 
   def self.find()
+    @@words[id]
   end
 
   def save
     @@words[self.id] = Word.new(self.definition, self.id)
+  end
+
+  def self.clear
+    @@words = {}
+    @@total_rows = 0
   end
 end
