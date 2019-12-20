@@ -15,8 +15,8 @@ get('/words') do
 end
 
 post('/words') do
-  definition = params[:word_name]
-  word = Word.new(definition, nil)
+  word_name = params[:word_name]
+  word = Word.new(word_name, definition, nil)
   word.save()
   @words = Word.all
   erb(:words)
@@ -38,7 +38,7 @@ end
 
 patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
-  @word.update(params[:definition])
+  @word.update(params[:word_name, :definition])
   @words = Word.all
   erb(:words)
 end

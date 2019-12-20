@@ -62,12 +62,12 @@ describe('.#word') do
       word = Word.new("Cat", nil)
       word.save()
       word.update("Tiger")
-      expect(word.definition).to(eq("Tiger"))
+      expect(word.word_name).to(eq("Tiger"))
     end
   end
 
   def ==(other_word)
-    self.name.eql?(other_word.definition)
+    self.name.eql?(other_word.word_name)
   end
 
   describe('#delete') do
