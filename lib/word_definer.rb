@@ -10,10 +10,6 @@ class Word
     @id = id || @@total_rows += 1
   end
 
-  # before(:each) do
-  #   @word = Word.new( )
-  # end
-
   def self.all()
     @@words.values()
   end
@@ -22,7 +18,7 @@ class Word
     self.definition() == word_to_compare.definition()
   end
 
-  def self.find()
+  def self.find(id)
     @@words[id]
   end
 

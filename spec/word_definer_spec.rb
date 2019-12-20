@@ -2,8 +2,14 @@ require('word_definer')
 require('rspec')
 
 describe('.#word_definer') do
-    before(:each) do
-    Word.clear()
+
+  before(:each) do
+    @word = Word.new("Cat", nil)
+    @word2 = Word.new("Dog", nil)
+  end
+
+  after(:each) do
+    Word.clear
   end
 
   describe(".all") do
