@@ -35,3 +35,10 @@ get('/albums/:id/edit') do
   @word = Word.find(params[:id].to_i())
   erb(:edit_album)
 end
+
+patch('/albums/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:definition])
+  @words = Word.all
+  erb(:words)
+end
