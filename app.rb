@@ -10,8 +10,8 @@ get('/') do
 end
 
 get('/words') do
-  @words = Word.all
-  erb(:words)
+  @word = Word.find_by_word(params[:search])
+  erb(:search_results)
 end
 
 post('/words') do
@@ -20,4 +20,13 @@ post('/words') do
   word.save()
   @words = Word.all
   erb(:words)
+end
+
+get('/words/new') do
+  erb(:new_word)
+end
+
+get('words/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
 end
