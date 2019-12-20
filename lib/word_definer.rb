@@ -30,4 +30,8 @@ class Word
     @@words = {}
     @@total_rows = 0
   end
+
+  def update(definition)
+    @definition = definition
+  end
 end

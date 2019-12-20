@@ -57,6 +57,15 @@ describe('.#word_definer') do
     end
   end
 
+  describe('#update') do
+    it("updates a word by id") do
+      word = Word.new("Cat", nil)
+      word.save()
+      word.update("Tiger")
+      expect(word.definition).to(eq("Tiger"))
+    end
+  end
+
   def ==(other_word)
     self.name.eql?(other_word.definition)
   end
