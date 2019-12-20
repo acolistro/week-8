@@ -14,7 +14,6 @@ get('/words') do
   erb(:search_results)
 end
 
-#the error is in the post method
 post('/words') do
   definition = params[:word_name]
   word = Word.new(definition, nil)
@@ -37,7 +36,7 @@ get('/albums/:id/edit') do
   erb(:edit_album)
 end
 
-patch('/albums/:id') do
+patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @word.update(params[:definition])
   @words = Word.all
