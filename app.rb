@@ -33,7 +33,7 @@ end
 
 get('/words/:id/edit') do
   @word = Word.find(params[:id].to_i())
-  erb(:edit_album)
+  erb(:edit_word)
 end
 
 patch('/words/:id') do
