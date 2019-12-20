@@ -70,4 +70,14 @@ describe('.#word_definer') do
     self.name.eql?(other_word.definition)
   end
 
+  describe('#delete') do
+    it("deletes a word by id") do
+      word = Word.new("Cat", nil)
+      word.save()
+      word2 = Word.new("Dog", nil)
+      word2.save()
+      word.delete()
+      expect(Word.all).to(eq([word2]))
+    end
+  end
 end
