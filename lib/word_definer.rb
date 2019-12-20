@@ -18,6 +18,10 @@ class Word
     @@words.values()
   end
 
+  def ==(word_to_compare)
+    self.definition() == word_to_compare.definition()
+  end
+
   def self.find()
   end
 
