@@ -11,18 +11,28 @@ class Word
   end
 
   def self.all()
-    @@words.values()
+    @@words.values
   end
 
   def ==(word_to_compare)
     self.definition() == word_to_compare.definition()
-  end
+  end 
 
   def self.find(id)
     @@words[id]
   end
 
-  def save
+  def self.find_by_word(definition)
+    x = 1
+    while x <= @@words.length
+      if @@words[x].definition == definition
+        return @@words[x]
+      end
+      x = x + 1
+    end
+  end
+
+  def save()
     @@words[self.id] = Word.new(self.definition, self.id)
   end
 

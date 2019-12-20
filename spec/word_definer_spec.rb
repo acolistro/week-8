@@ -1,4 +1,4 @@
-require('word_definer')
+require('word')
 require('rspec')
 
 describe('.#word_definer') do
