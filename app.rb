@@ -31,7 +31,7 @@ get('words/:id') do
   erb(:word)
 end
 
-get('/albums/:id/edit') do
+get('/words/:id/edit') do
   @word = Word.find(params[:id].to_i())
   erb(:edit_album)
 end
