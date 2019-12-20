@@ -16,10 +16,10 @@ class Word
 
   def ==(word_to_compare)
     self.definition() == word_to_compare.definition()
-  end 
+  end
 
   def self.find(id)
-    @@words[id]
+    @@word[id]
   end
 
   def self.find_by_word(definition)
