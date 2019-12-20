@@ -14,8 +14,9 @@ get('/words') do
   erb(:search_results)
 end
 
+#the error is in the post method
 post('/words') do
-  word = params[:word_name]
+  definition = params[:word_name]
   word = Word.new(definition, nil)
   word.save()
   @words = Word.all
