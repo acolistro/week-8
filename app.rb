@@ -16,6 +16,7 @@ end
 
 post('/words') do
   word_name = params[:word_name]
+  definition = params[:definition]
   word = Word.new(word_name, definition, nil)
   word.save()
   @words = Word.all
